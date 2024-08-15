@@ -135,3 +135,45 @@ let newArr14 = arr14.reduce((accumulator, item) => {
 }, {})
 
 console.log('newArr14', newArr14)
+
+//forEach
+
+// 1) Given an array of numbers, use forEach() to print each number to the console.
+let arr15 = [1,2,3,4,5]
+arr15.forEach((item) => {
+    console.log(item)
+})
+
+// 2) Write a function that takes an array of numbers and uses forEach() to calculate and return the sum of all elements in the array.
+let sum1 =  0;
+arr15.forEach((item) => {
+    sum1 += item
+})
+console.log(sum)
+
+// 3) Given an array of strings, use forEach() to modify each string by appending "!" to the end of each string. The original array should be modified directly
+let strArray = ['hello', 'world']
+strArray.forEach((item, index) => {
+    strArray[index] = `${item}!`
+})
+console.log(strArray)
+
+// 4) Given an array of words, use forEach() to create an object that counts how many times each word appears in the array
+let arr16 = ['hello', 'world', 'hello', 'hey', 'hi']
+let obj = {}
+arr16.forEach((item) => {
+    if(obj[item]){
+        obj[item] = obj[item] + 1
+    }else{
+        obj[item] = 1
+    }
+})
+console.log(obj)
+
+// 5) Given an array of numbers, use forEach() to print only the even numbers to the console.
+let arr17 = [1,2,3,4,5]
+arr17.forEach((item) => {
+    if(item % 2 === 0){
+        console.log(item)
+    }
+})
