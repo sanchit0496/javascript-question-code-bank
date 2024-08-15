@@ -407,3 +407,70 @@ let flatArr26 = arr26.flat(Infinity)
 let newArr26 = [...new Set(flatArr26)]
 console.log(newArr26)
 
+// flatmap method
+
+// 1) Question: Given an array of objects where each object has a start and end property representing a range of numbers, use flatMap() to create a single array containing all numbers in these ranges.
+let ranges = [
+    { start: 1, end: 3 },
+    { start: 5, end: 7 },
+    { start: 10, end: 12 }
+];
+
+let flatRanges = ranges.flatMap((item) => {
+    let tempArr = []
+    tempArr.push(item.start)
+    tempArr.push(item.end)
+    return tempArr
+})
+console.log(flatRanges)
+
+// 2) Question: Given an array of event objects where each event has a name and times array (indicating the hours it occurs), use flatMap() to create an array of strings where each string describes the event at a specific time.
+let events = [
+    { name: "Meeting", times: [9, 10] },
+    { name: "Workshop", times: [11, 12] },
+    { name: "Lunch", times: [13] }
+];
+
+let flatEventArray = events.flatMap((item) => {
+    return item.times.map((subItem) => {
+        return `${item.name} at ${subItem}`
+    })
+})
+console.log(flatEventArray)
+
+// 3) Question: Given an array of strings representing user input, where each string contains multiple comma-separated values, use flatMap() to create a single array of all trimmed values.
+
+let inputs = ["  apple, banana ", "carrot, date", " elderberry "];
+let trimInput = inputs.flatMap((item) => {
+    console.log(item)
+    let tempArr = item.split(",")
+    return tempArr.map((item) => item.trim())
+})
+console.log(trimInput)
+
+// 4) Question: Given an array of objects where each object has a category property and an items array, use flatMap() to create an array of objects, each containing the category and an individual item from items.
+let categories = [
+    { category: "fruits", food: ["apple", "banana"] },
+    { category: "vegetables", food: ["carrot", "broccoli"] }
+];
+let outputCategory = categories.flatMap((item) => {
+    return item.food.map((subItem) =>{
+        return {category: item.category, item: subItem}
+    })
+})
+console.log(outputCategory)
+
+// 5) Question: Given an array of transaction objects where each transaction has a date and a payments array (each containing an amount), use flatMap() to create an array of objects, each representing a payment on a specific date.
+let transactions = [
+    { date: "2024-08-01", payments: [100, 200] },
+    { date: "2024-08-02", payments: [150] }
+];
+let flatTransaction = transactions.flatMap((item) => {
+    return item.payments.map((subItem) => {
+        return {
+            date: item.date,
+            payment: subItem
+        }
+    })
+})
+console.log(flatTransaction)
