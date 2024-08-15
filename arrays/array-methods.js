@@ -79,3 +79,59 @@ const isEven = (arr) => {
 }
 let newArr9 = arr9.filter((item) => item.every(isEven))
 console.log(newArr9)
+
+//reduce 
+
+// 1) Write a function that takes an array of numbers and uses the reduce() method to return the sum of all the elements in the array
+let arr10 = [1,2,3,4,5]
+let sum = arr10.reduce((accumulator, item) => item + accumulator, 0)
+console.log(sum)
+
+// 2) Given an array of strings, use reduce() to create an object that counts the occurrences of each string in the array
+let arr11 = ['hello', 'world', 'hello', 'hey', 'hi']
+let newArr11 = arr11.reduce((accumulator, item) => {
+    if(accumulator[item]){
+        accumulator[item] = accumulator[item] + 1
+    }else{
+        accumulator[item] = 1
+    }
+    return accumulator
+}, {})
+
+console.log(newArr11)
+
+// 3) Given an array of arrays (e.g., [[1, 2], [3, 4], [5, 6]]), use reduce() to flatten it into a single array (e.g., [1, 2, 3, 4, 5, 6]).
+let arr12 = [[1, 2], [3, 4], [5, 6]]
+let newArr12 = arr12.reduce((accumulator, item) => accumulator.concat(item), [])
+console.log(newArr12)
+
+// 4) Write a function that takes an array of numbers and uses reduce() to find and return the maximum value in the array.
+let arr13 = [1,2,4,5,9,8]
+let num = arr13.reduce((accumulator, item) => {
+    return item > accumulator ? item: accumulator
+} , 0)
+console.log(num)
+
+//5) Given an array of objects where each object has a type property (e.g., { type: 'fruit', name: 'apple' }), use reduce() to group the objects by their type property, returning an object where the keys are the types and the values are arrays of objects of that type.
+let arr14 = [
+    { type: 'fruit', name: 'apple' },
+    { type: 'vegetable', name: 'carrot' },
+    { type: 'fruit', name: 'banana' },
+    { type: 'fruit', name: 'orange' },
+    { type: 'vegetable', name: 'broccoli' },
+    { type: 'meat', name: 'chicken' }
+];
+
+let newArr14 = arr14.reduce((accumulator, item) => {
+    let type = item.type
+    
+    if(!accumulator[type]){
+        accumulator[type] = []
+    }
+        
+    accumulator[type].push(item)
+    
+    return accumulator
+}, {})
+
+console.log('newArr14', newArr14)
