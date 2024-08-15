@@ -356,3 +356,54 @@ let retVal10 = numberGroups.every((item) => {
     return newSet.size === item.length
 })
 console.log(retVal10)
+
+// flat method
+
+// 1) Question: Given an array that contains multiple levels of nested arrays, use flat() to flatten the array into a single-level array.
+
+let arr = [1, [2, 3], [4, [5, 6]]];
+let newArr = arr.flat()
+console.log(newArr)
+
+// 2) Question: Given an array with three levels of nested arrays, use flat() to flatten the array to a depth of 2.
+let arr23 = [1, [2, [3, [4]], 5], 6];
+
+let newArr23 = arr.flat(2)
+console.log(newArr23)
+
+// 3) Question: Given an array of objects where each object has a property values that is an array, use flat() to create a single array containing all the values.
+let data = [
+    { id: 1, values: [10, 20] },
+    { id: 2, values: [30, 40] },
+    { id: 3, values: [50, 60] }
+];
+let data1 = data.map((item) => {
+    return item.values
+}).flat()
+console.log(data1)
+
+// 4) Given an array that contains some empty slots (sparse array), use flat() to remove these empty slots and return a flattened array.
+
+let arr24 = [1, , 3, [4, , 6], 7];
+
+let flattenedArray = arr24.flat();
+
+console.log(flattenedArray); 
+
+// 5) Question: Given an array of strings, where each string contains words separated by spaces, use map() followed by flat() to create a single array of all the words.
+
+let sentences = ["hello world", "JavaScript is fun", "flat method"];
+let retArr = sentences.map((item) => item.split(" ")).flat()
+console.log(retArr)
+
+// 6) Given a deeply nested array, use flat() with the appropriate depth to completely flatten the array into a single-level array.
+let arr25 = [1, [2, [3, [4, [5]]]]];
+let flatArray = arr25.flat(Infinity)
+console.log(flatArray)
+
+// 7) Given an array with nested arrays that might contain duplicate values, use flat() to create a single array and then remove any duplicates.
+let arr26 = [1, [2, 3], [3, [4, 5]], 2];
+let flatArr26 = arr26.flat(Infinity)
+let newArr26 = [...new Set(flatArr26)]
+console.log(newArr26)
+
