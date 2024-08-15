@@ -266,3 +266,47 @@ let retVal1 = numbers.findIndex((item)=> {
     return item > 10 & item % 3 === 0
 }) 
  console.log(retVal1)
+
+
+// some method
+
+// 1) Given an array of numbers, use some() to determine if the array contains any negative numbers. Return true if there is at least one negative number, otherwise return false
+const checkNegative = (number) => {
+    return number < 0
+}
+let numbers1 = [2, 5, -3, 8, 10];
+let retVal2 = numbers1.some(checkNegative)
+console.log(retVal2)
+
+// 2) Question: Given an array of strings, use some() to check if any of the strings contain the word "JavaScript". Return true if at least one string contains the word, otherwise return false.
+let phrases = ["I love coding", "JavaScript is great", "Python is cool"];
+let retVal3 = phrases.some((item, index) => {
+    return item.includes('JavaScript')
+})
+console.log('retVal3',retVal3)
+
+// 3) Question: Given an array of strings, use some() to check if any of the strings are empty (i.e., ""). Return true if there is at least one empty string, otherwise return false.
+let strings = ["hello", "world", "", "JavaScript"];
+let retVal4 = strings.some((item ,index) => {
+    return item.length === 0
+})
+console.log(retVal4)
+
+// 4) Question: Write a function that takes an array of numbers and uses some() to check if there is at least one prime number in the array. Return true if there is, otherwise return false.
+let numbers2 = [4, 6, 8, 9, 11];
+
+function isPrime(num) {
+    if (num <= 1) return false; 
+    if (num === 2) return true; 
+    if (num % 2 === 0) return false; 
+
+    for (let i = 3; i <= Math.sqrt(num); i += 2) {
+        if (num % i === 0) return false; 
+    }
+
+    return true; 
+}
+
+
+let retVal5 = numbers2.some(isPrime)
+console.log(retVal5)
