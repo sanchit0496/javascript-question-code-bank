@@ -310,3 +310,49 @@ function isPrime(num) {
 
 let retVal5 = numbers2.some(isPrime)
 console.log(retVal5)
+
+// every 
+
+// 1) Given an array of arrays, use every() to check if all the inner arrays contain the number 7. Return true if they all do, otherwise return false
+let arrays = [[7, 2, 3], [4, 7, 9], [7, 10, 12]];
+let retVal6 = arrays.every((item) => item.includes(7))
+console.log(retVal6)
+
+// 2) Question: Given an array of objects where each object has a settings property, which is itself an object, use every() to check if all settings objects have a theme property as light. Return true if they all do, otherwise return false.
+let users = [
+    { name: 'Alice', settings: { theme: 'light' } },
+    { name: 'Bob', settings: { theme: 'light' } },
+    { name: 'Charlie', settings: { theme: 'light' } }
+];
+
+let retVal7 = users.every((item) => {
+    return item.settings.theme === 'light'
+})
+console.log(retVal7)
+
+// 3) Question: Given an array of arrays of strings, use every() to check if all the inner arrays have exactly three elements. Return true if they all do, otherwise return false.
+let wordGroups = [
+    ["apple", "banana", "cherry"],
+    ["dog", "elephant", "frog"],
+    ["giraffe", "hippo", "iguana"]
+];
+let retVal8 = wordGroups.every((item) => item.length ===3)
+console.log(retVal8)
+
+// 4) Question: Given an array of numbers, use every() to check if all numbers are divisible by 5. Return true if they all are, otherwise return false.
+
+let numbers4 = [10, 20, 30, 50];
+let retVal9 = numbers4.every((item) => item % 5 === 0)
+console.log(retVal9)
+
+// 5) Question: Given an array of arrays, where each sub-array contains numbers, use every() to check if all numbers within each sub-array are unique within that sub-array. Return true if they are, otherwise return false.
+let numberGroups = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+let retVal10 = numberGroups.every((item) => {
+    let newSet = new Set(item)
+    return newSet.size === item.length
+})
+console.log(retVal10)
