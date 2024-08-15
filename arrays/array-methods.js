@@ -177,3 +177,50 @@ arr17.forEach((item) => {
         console.log(item)
     }
 })
+
+//find 
+console.log('the find questions here')
+
+// 1) Given an array of numbers, use find() to return the first even number in the array. If no even number is found, return undefined.
+let arr18 = [1,2,3,4,5]
+let newArr18 = arr18.find((item) => item % 2 == 0) 
+console.log(newArr18)
+
+// 2) Given an array of objects representing people, where each object has properties name and age, use find() to return the first object where the person's age is greater than 10
+let arr19 = [
+    {name: 'Person 02', age: 10},
+    {name: 'Person 04', age: 8},
+    {name: 'Person 03', age: 21},
+    {name: 'Person 05', age: 9},
+    {name: 'Person 01', age: 20},
+    {name: 'Person 06', age: 22}
+]
+let newArr19 = arr19.find((item) => item.age > 10)
+console.log(newArr19)
+
+
+ // 3) Write a function that takes an array of strings and a target substring, and uses find() to return the first string that contains the target substring
+let stringsArray = ["apple pie", "banana split", "cherry tart", "blueberry muffin"];
+let substring = "berry";
+let answer = stringsArray.find((item) => item.includes(substring))
+console.log(answer)
+
+// 4) Given an array of arrays, use find() to return the first sub-array that contains the number 5. If no such sub-array is found, return undefined
+let arr20 = [[1, 2], [3, 4], [5, 6]]
+let newArr20 = arr20.find((item) => item.includes(5))
+console.log(newArr20)
+
+// 5) Given an array of numbers representing student IDs, use find() to return the first missing ID
+let arr21 = [100, 101, 102, 103,105]
+let newArr21 = arr21.find((item, index) => {
+    return arr21[index +1] - arr21[index] > 1
+}) + 1
+console.log(newArr21)
+
+
+
+
+
+
+
+
