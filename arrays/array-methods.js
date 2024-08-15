@@ -217,10 +217,52 @@ let newArr21 = arr21.find((item, index) => {
 }) + 1
 console.log(newArr21)
 
+//findIndex function
+ 
+// 1) Given an array of numbers, use findIndex() to return the index of the first even number in the array. If no even number is found, return -1.
+let checkEven = (num) => {
+    return num % 2 === 0
+}
+
+let arr22 = [1,2,3,4]
+let evenIndex= arr22.findIndex(checkEven)
+console.log(evenIndex)
+
+// 2) Given an array of objects representing products, where each object has properties id, name, and price, use findIndex() to return the index of the first product with a price greater than $50
+
+let products = [
+    { id: 1, name: 'Product A', price: 30 },
+    { id: 2, name: 'Product B', price: 60 },
+    { id: 3, name: 'Product C', price: 40 }
+];
+const checkPrice = (product) => {
+    return product.price > 50
+}
+
+let productIndex = products.findIndex(checkPrice)
+console.log(productIndex)
+
+// 3) Question: Given an array of student IDs sorted in ascending order, use findIndex() to find the index where a student ID is missing (e.g., if the array is [100, 101, 103], find the index of the gap where 102 should be).
+let studentIDs = [100, 101, 103, 104];
+let missingId = studentIDs.findIndex((item, index) => {
+    console.log(item, index)
+    return studentIDs[index + 1] - studentIDs[index] > 1
+}) +1
+console.log(missingId)
 
 
 
+// 4) Write a function that takes an array of strings and a target substring, and uses findIndex() to return the index of the first string that contains the target substring
+let stringsArray1 = ["apple pie", "banana split", "cherry tart", "blueberry muffin"];
+let substring1 = "berry";
+let retVal = stringsArray1.findIndex((item) => {
+    return item.includes(substring1)
+})
+console.log(retVal)
 
-
-
-
+// 5) Given an array of numbers, use findIndex() to return the index of the first number that is both greater than 10 and divisible by 3. If no such number is found, return -1
+let numbers = [2, 4, 12, 15, 8];
+let retVal1 = numbers.findIndex((item)=> {
+    return item > 10 & item % 3 === 0
+}) 
+ console.log(retVal1)
