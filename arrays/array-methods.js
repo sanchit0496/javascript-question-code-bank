@@ -610,3 +610,79 @@ let array21 = [10, 20];
 let element1 = 30;
 let element2 = 40;
 console.log(array21.concat(element1, element2))
+
+// slice method
+
+// 1) Question: Given an array of numbers, use slice() to extract the first three elements of the array.
+
+let numbers5 = [10, 20, 30, 40, 50];
+let slicedArr5 = numbers5.slice(0, 3)
+console.log(slicedArr5)
+
+// 2) Question: Given an array of strings, use slice() to create a shallow copy of the entire array.
+let strings4 = ["apple", "banana", "cherry"];
+let shallowString4 = strings4.slice()
+console.log(shallowString4)
+
+// 3) Question: Given an array of numbers, use slice() to extract the last two elements of the array.
+let numbers6 = [1, 2, 3, 4, 5];
+let slicedArr6 = numbers6.slice(numbers6.length -2)
+console.log(slicedArr6)
+
+// 4) Question: Given an array of strings, use slice() to create a new array that excludes the first element.
+
+let strings7 = ["first", "second", "third", "fourth"];
+let slicedStr7 = strings7.slice(1)
+console.log(slicedStr7)
+
+// 5) Question: Given an array of numbers, use slice() to extract a subarray starting from the second element to the fourth element (inclusive).
+
+let numbers9 = [0, 1, 2, 3, 4, 5];
+let slicedNumbers9 = numbers9.slice(1,5)
+console.log(slicedNumbers9)
+
+// 6) Question: Given an array of characters, use slice() to extract the last three characters of the array using negative indexing.
+let characters = ["a", "b", "c", "d", "e"];
+let slicedChar = characters.slice(-3)
+console.log(slicedChar)
+
+// 7) Question: Given an array of numbers, use slice() to extract every second element from the array, starting from the first element.
+let numbers14 = [10, 20, 30, 40, 50, 60];
+ 
+let fl = numbers14.filter((item, index) => index % 2 == 0)
+console.log(fl)
+
+// 8) Question: Implement a simple pagination function using slice(). Given an array of data and a page size, the function should return the items corresponding to a specific page number.
+let data12 = ["item1", "item2", "item3", "item4", "item5", "item6"];
+let pageSize = 2;
+let pageNumber = 2;
+
+let startIndex = (pageNumber -1)  * pageSize
+let endIndex = startIndex + pageSize
+let pageData = data12.slice(startIndex, endIndex)
+console.log(pageData)
+
+// 9) Question: Given an array, implement a function that uses slice() to extract a subarray that wraps around the end of the array if needed. For example, if the array has 10 elements and you want 5 elements starting from index 8, the result should include elements from the end and the beginning of the array.
+let array22 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let startIndex1 = 8;
+let length = 5;
+
+let arr110 = array22.slice(startIndex1, array22.length)
+let arr111 = array22.slice(0,(length - arr110.length))
+let resultArr = arr110.concat(arr111)
+
+console.log(resultArr)
+
+// 10) Question: Given an array of objects, use slice() to create a deep copy of the array. Then modify the original array and demonstrate that the copied array remains unaffected.
+
+let originalArray = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" }
+  ];
+
+//let copied = originalArray.slice() //this wont work as slice creates shallow copy instead of deep copy
+
+let copied = JSON.parse(JSON.stringify(originalArray))
+originalArray[0].name = 'hello'
+console.log(originalArray)
+console.log(copied)
