@@ -474,3 +474,54 @@ let flatTransaction = transactions.flatMap((item) => {
     })
 })
 console.log(flatTransaction)
+
+// includes
+
+// 1) Given an array of substrings and a main string, use includes() to check if the main string contains all of the substrings. Return true if all substrings are found, otherwise return false.
+
+let substrings = ["apple", "banana"];
+let mainString = "I have an apple and a banana.";
+
+let retVal12 = substrings.every((item) => mainString.includes(item))
+console.log(retVal12)
+
+// 2) Given two arrays, use includes() to find all elements in the first array that are not present in the second array. Return an array of these missing elements.
+let array1 = [1, 2, 3, 4];
+let array2 = [2, 4, 6];
+
+let elems = array1.filter((item) => !array2.includes(item))
+console.log(elems)
+
+// 3) Given an array of strings, use includes() to check if the array contains a specific string in a case-insensitive manner. Return true if the string is found, otherwise return false.
+let array = ["Hello", "world", "JavaScript"];
+let searchString = "javascript";
+
+let retArr28 = array.some((item) => item.toLowerCase() === searchString.toLowerCase())
+console.log(retArr28)
+
+// 4) Given a nested array of numbers (an array of arrays), use includes() to check if a specific number exists in any of the inner arrays. Return true if the number is found, otherwise return false.
+let nestedArray = [[1, 2], [3, 4], [5, 6]];
+let searchValue = 4;
+let retVal14 = nestedArray.some((item) => item.includes(searchValue))
+console.log(retVal14)
+
+// 5) Question: Given two arrays, use includes() to check if all elements of the first array exist in the second array. Return true if all elements are found, otherwise return false.
+
+let array14 = [2, 4];
+let array15 = [1, 2, 3, 4, 5];
+
+let retVal15 = array14.every((item) => array15.includes(item))
+console.log(retVal15)
+
+// 6) Question: Given an array of objects and a set of allowed values, use includes() to filter the array to only include objects whose property values match one of the allowed values.
+let objects = [{ id: 1 }, { id: 2 }, { id: 3 }];
+let allowedIds = [1, 3];
+
+let retVal16 = objects.filter((item) => {
+    if(allowedIds.includes(item.id)){
+        return item;
+    }else{
+        return null
+    }
+})
+console.log(retVal16)
