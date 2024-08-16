@@ -525,3 +525,88 @@ let retVal16 = objects.filter((item) => {
     }
 })
 console.log(retVal16)
+
+// sort method
+
+// 1) Given an array of numbers, use sort() to first sort the array in ascending order and then in descending order. Return both sorted arrays.
+
+let numbers8 = [4, 2, 9, 1, 5, 6];
+let asc = [...numbers8].sort((a, b) => a -b)
+let desc = [...numbers8].sort((a, b) => b - a)
+console.log(asc)
+console.log(desc)
+
+// 2) Given an array of strings, use sort() to order the strings by their length, from shortest to longest.
+
+let strings2 = ["apple", "banana", "kiwi", "grape"];
+let ascLength = [...strings2].sort((a, b) => a.length - b.length)
+console.log(ascLength)
+
+// 3) Given an array of objects where each object represents a student with properties name and grade, use sort() to order the students by their grade in descending order.
+
+let students = [
+    { name: "Alice", grade: 85 },
+    { name: "Bob", grade: 92 },
+    { name: "Charlie", grade: 88 }
+  ];
+
+let ascStudents = [...students].sort((a, b) => a.grade - b.grade)
+console.log(ascStudents)
+
+// 4) Given an array of strings, use sort() to first sort the array alphabetically and then reverse alphabetically. Return both sorted arrays.
+
+let words = ["apple", "banana", "grape", "cherry"];
+let alphabetically = [...words].sort()
+console.log(alphabetically)
+
+let revAlphabetically = [...words].sort().reverse()
+console.log(revAlphabetically)
+
+// 5) Given an array of objects representing books, where each book has a title, author, and year properties, use sort() to first sort the books by year in descending order. If two books have the same year, sort them alphabetically by title.
+let books = [
+    { title: "Book A", author: "Author X", year: 2020 },
+    { title: "Book B", author: "Author Y", year: 2018 },
+    { title: "Book C", author: "Author Z", year: 2020 }
+  ];
+
+let retVal18 = books.sort((a, b) => {
+    if(a.year === b.year){
+        return a.title.localeCompare(b.title)
+    }else{
+        return b.year - a.year
+    }
+})
+console.log(retVal18)
+
+// concat 
+
+// 1) Given two arrays of numbers, use concat() to combine them into a single array.
+
+let array11 = [1, 2, 3];
+let array12 = [4, 5, 6];
+let resArr = array11.concat(array12)
+console.log(resArr)
+
+
+// 2) Given three arrays of strings, use concat() to merge all three into one array.
+
+let array18 = ["a", "b"];
+let array19 = ["c", "d"];
+let array20 = ["e", "f"];
+
+let resArr1 = array18.concat(array19, array20)
+console.log(resArr1)
+
+// 3) Given two arrays, one containing numbers and the other containing strings, use concat() to create a single array that includes all the elements from both arrays.
+
+let numbers12 = [1, 2, 3];
+let words1 = ["one", "two", "three"];
+let resArr2 = words1.concat(numbers12)
+console.log(resArr2)
+
+// 4) Given an array and some individual elements, use concat() to add the individual elements to the end of the array.
+
+let array21 = [10, 20];
+let element1 = 30;
+let element2 = 40;
+console.log(array21.concat(element1, element2))
