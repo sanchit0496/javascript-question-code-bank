@@ -49,3 +49,105 @@ let s10 = new Set([1,2,4,5,3])
 console.log([...s9].every((item) => s10.has(item)) && s9.size === s10.size)
 
 
+// map
+
+
+// 1) Task: Create a Map and set the key-value pairs ('a', 1), ('b', 2), and ('c', 3). Then retrieve the value associated with key b.
+let mapp = new Map([
+    ['a', '1'],
+    ['b', '2'],
+    ['c', '3'],
+])
+console.log(mapp.get('b'))
+
+// 2) Task: Create a Map with key-value pairs ('name', 'John'), ('age', 30). Update the value for the key age to 31.
+let person = new Map([
+    ['name', 'hello'],
+    ['age', '20'],
+])
+
+person.set('age', '10')
+console.log(person)
+
+// 3) Task: Create a Map with key-value pairs ('apple', 'red'), ('banana', 'yellow'), and ('grape', 'purple'). Delete the key-value pair for apple.
+let fruits = new Map([
+    ['apple', 'red'],
+    ['banana', 'yellow'],
+    ['grape', 'purple'],
+])
+fruits.delete('apple')
+console.log(fruits)
+
+// 4) Task: Create a Map with key-value pairs ('x', 10), ('y', 20), ('z', 30). Check if the key y exists in the Map.
+let keyVal = new Map([
+    ['x', 20],
+    ['y', 10]
+])
+console.log(keyVal.has('y'))
+
+// 5) Task: Create a Map with key-value pairs ('1', 'one'), ('2', 'two'), ('3', 'three'). Iterate over the Map and concatenate all keys and values into a string.
+let keyVal1 = new Map([
+    ['1', 'one'],
+    ['2', 'two'],
+    ['3', 'three'],
+    ['4', 'four']
+])
+
+let str = ''
+
+for(let [key, value] of keyVal1){
+    str += `${key}${value}`
+}
+console.log(str)
+
+// 6) Task: Create a Map with key-value pairs ('a', 1), ('b', 2), and ('c', 3). Return the size of the Map.
+
+console.log(keyVal1.size)
+
+// 7) Task: Create a Map with key-value pairs ('dog', 'bark'), ('cat', 'meow'), ('cow', 'moo'). Convert the Map to an array of key-value pairs.
+let keyVal2 = new Map([
+    ['1', 'one'],
+    ['2', 'two'],
+    ['3', 'three'],
+    ['4', 'four']
+])
+let arr12 = []
+for([item, key] of keyVal2){
+    arr12.push([item, key])
+}
+console.log(arr12)
+
+// 8) Task: Given an array of key-value pairs [ ['name', 'Alice'], ['age', 25], ['city', 'NY'] ], convert the array to a Map.
+let arr14 = [ ['name', 'Alice'], ['age', 25], ['city', 'NY'] ]
+let hm = new Map()
+arr14.forEach(([key, value]) => {
+    hm.set(key,value)
+})
+console.log(hm)
+
+let hm1 = new Map(arr14)
+console.log(hm1)
+
+// 9) Task: Create two Map objects: one with key-value pairs ('a', 1) and ('b', 2) and the other with ('b', 3) and ('c', 4). Merge the two maps into a new map, with the second map's values taking precedence in case of key collisions.
+
+let keyVal4 = new Map([
+    ['a', '1'],
+    ['b', '2']
+])
+
+let keyVal5 = new Map([
+    ['b', '3'],
+    ['c', '4']
+])
+
+let hm6 = new Map([...keyVal4, ...keyVal5])
+console.log(hm6)
+
+// 10) Task: Create a Map with key-value pairs ('one', 1), ('two', 2), ('three', 3). Remove all entries from the Map.
+
+let keyVal6 = new Map([
+    ['b', '3'],
+    ['c', '4']
+])
+keyVal6.clear()
+console.log(keyVal6)
