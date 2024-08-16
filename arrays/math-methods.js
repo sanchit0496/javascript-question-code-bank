@@ -1,5 +1,3 @@
-console.log('hello')
-
 // Math.random()
 
 // 1) Question 1: Generate a Random Decimal Between 0 and 1
