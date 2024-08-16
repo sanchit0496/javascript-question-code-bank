@@ -232,3 +232,44 @@ weakSet22.add(obj20);
 
 console.log(weakSet11.has(obj10) && weakSet22.has(obj10));
 console.log(weakSet11.has(obj20) && weakSet22.has(obj20));
+
+// weakmap 
+
+
+// 1) Task: Create a WeakMap and set key-value pairs where the keys are objects and the values are strings. Retrieve the value for one of the keys.
+
+let key1 = {greet: 'hello'}
+let key2 = {greet: 'world'}
+let wmp = new WeakMap([
+    [key1, 'w1'],
+    [key2, 'w2']
+])
+
+console.log(wmp.get(key1))
+
+// 2) Task: Create a WeakMap with two key-value pairs. Delete one of the key-value pairs and check if the key still exists in the WeakMap.
+wmp.delete(key1)
+console.log(wmp)
+
+// 3) Task: Attempt to use a primitive value (like a string or number) as a key in a WeakMap.
+// wmp.set(['key3', '2'])
+// console.log(wmp)
+
+// 4) Task: Add several key-value pairs to a WeakMap. Check if a specific key exists in the WeakMap.
+console.log(wmp.has(key2))
+
+// 5) Task: Add a key-value pair to a WeakMap, then dereference the key object. Check if the key-value pair is still in the WeakMap.
+
+let key3 = {greet: 'hey'}
+let key4 = {greet: 'there'}
+wmp.set(key3, 'w3')
+wmp.set(key4, 'w4')
+
+key4 = null
+
+console.log(wmp)
+//The key-value pair should be garbage collected and removed from the WeakMap.
+
+
+console.log(wmp)
+//WeakMap does not have a size property, so this operation is not applicable.
