@@ -686,3 +686,63 @@ let copied = JSON.parse(JSON.stringify(originalArray))
 originalArray[0].name = 'hello'
 console.log(originalArray)
 console.log(copied)
+
+// splice method 
+
+console.log('splice method')
+
+// 1) Question: Given an array of numbers, use splice() to remove the second element from the array.
+
+let numbers22 = [10, 20, 30, 40];
+let numRemoved = numbers22.splice(1, 1)
+console.log(numbers22, numRemoved)
+
+// 2) Question: Given an array of strings, use splice() to add a new element "kiwi" at the second position.
+let fruits = ["apple", "banana", "cherry"];
+fruits.splice(1, 0,"kiwi")
+console.log(fruits)
+
+// 3) Question: Given an array of numbers, use splice() to replace the last two elements with new elements 100 and 200.
+let numbers15 = [1, 2, 3, 4, 5];
+numbers15.splice(arr.length, 2, 100,200)
+console.log(numbers15)
+
+// 4) Question: Given an array of strings, use splice() to remove three elements starting from the second position.
+let colors = ["red", "green", "blue", "yellow", "purple"];
+colors.splice(1,3)
+console.log(colors)
+
+// 5) Question: Given an array of numbers, use splice() to insert three new numbers (7, 8, 9) at the third position.
+let numbers16 = [1, 2, 3, 4, 5, 6];
+numbers16.splice(2,0,7,8,9)
+console.log(numbers16)
+
+// 6) Question: Given an array of strings, use splice() to remove the third element and replace it with two new elements ("orange", "grape").
+let fruits1 = ["apple", "banana", "cherry", "date"];
+fruits1.splice(2,1,'orange', 'grape')
+console.log(fruits1)
+
+// 7) Question: Given an array of numbers, use splice() to extract a subarray from the second to fourth elements, then replace them with a single element (99).
+let numbers18 = [10, 20, 30, 40, 50, 60];
+numbers18.splice(1,3, 99)
+console.log(numbers18)
+
+// 8) Question: Given an array of strings, use splice() to completely clear all elements from the array.
+let words4 = ["hello", "world", "javascript", "splice"];
+words4.splice(0, words.length)
+console.log(words4)
+
+// 9) Question: Given an array of numbers, use splice() to remove the last two elements and insert them at the beginning of the array.
+let numbers23 = [1, 2, 3, 4, 5];
+let removedElements = numbers23.splice(numbers23.length -2, 2)
+console.log(numbers23.splice(0,0,...removedElements))
+console.log(numbers23)
+
+// 10) Question: Given an array of numbers, use a loop and splice() to remove all occurrences of a specific value (e.g., 3) from the array.
+let numbers24 = [1, 3, 4, 3, 5, 3, 6];
+for(let i= 0; i<numbers24.length; i++){
+    if(numbers24[i] === 3){
+        numbers24.splice(i,1)
+    }
+}
+console.log(numbers24)
