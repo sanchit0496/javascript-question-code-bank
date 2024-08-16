@@ -151,3 +151,84 @@ let keyVal6 = new Map([
 ])
 keyVal6.clear()
 console.log(keyVal6)
+
+// weakset
+
+// 1) Task: Create a WeakSet and add three different object references to it. Check if one of the objects is in the WeakSet.
+
+let weakset = new WeakSet();
+
+// Create object references
+let obj1 = { name: "Object 1" };
+let obj2 = { name: "Object 2" };
+let obj3 = { name: "Object 3" };
+
+weakset.add(obj1);
+weakset.add(obj2);
+weakset.add(obj3);
+
+console.log(weakset.has(obj2));
+
+// 2) Task: Create a WeakSet with two objects, obj1 and obj2. Delete obj1 and check if it is still in the WeakSet.
+
+let weakset1 = new WeakSet();
+
+let obj11 = { name: "Object 1" };
+let obj22 = { name: "Object 2" };
+
+weakset.add(obj11);
+weakset.add(obj22);
+weakset.delete(obj11)
+
+console.log(weakset.has(obj11))
+
+// 3) Task: Try adding a primitive value (like a string or number) to a WeakSet and observe the result.
+
+let weakset2 = new WeakSet();
+
+let obj15 = { name: "Object 1" };  
+let obj25 = { name: "Object 2" };
+weakset2.add(obj15)
+weakset2.add(obj25)
+// weakset.add('hello')
+console.log(weakset2)
+//The operation should throw a TypeError since WeakSet only accepts objects.
+
+// 4) Task: Add the same object reference multiple times to a WeakSet and check if the WeakSet still has only one entry for that object.
+weakset2.add(obj25)
+console.log(weakset2)
+//Expected Output: The WeakSet should still only contain one instance of the object.
+
+// 5) Task: Add an object to a WeakSet, then dereference the object (set it to null). Check if the object still exists in the WeakSet.
+let obj35 =  {name: 'Object 3'}
+weakset2.add(obj35)
+
+obj35 = null
+console.log(weakset2)
+//Expected Output: The object should be garbage collected, and the WeakSet should no longer contain it.
+
+// 6)  Task: Attempt to iterate over a WeakSet to list all objects it contains.
+// for([key, value] of weakset2){
+//     console.log(key)
+// }
+// TypeError: weakset2 is not iterable
+
+
+// 7) Task: Create two WeakSet objects with the same object references and check if they are equal.
+// Create an object reference
+let obj10 = { name: 'Object 1' };
+let obj20 = { name: 'Object 2' };
+
+// Create two WeakSet objects
+let weakSet11 = new WeakSet();
+let weakSet22 = new WeakSet();
+
+// Add the same object references to both WeakSet objects
+weakSet11.add(obj10);
+weakSet11.add(obj20);
+
+weakSet22.add(obj10);
+weakSet22.add(obj20);
+
+console.log(weakSet11.has(obj10) && weakSet22.has(obj10));
+console.log(weakSet11.has(obj20) && weakSet22.has(obj20));
