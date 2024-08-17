@@ -50,7 +50,6 @@ Here's the combined list of JavaScript interview preparation topics, including b
   - **endsWith**: Check if a string ends with a specific substring.
   - **slice**: Extract a part of a string and return it as a new string.
   - **substring**: Extract a part of a string between two indices.
-  - **substr**: Extract a part of a string starting from an index for a given number of characters.
   - **trim**: Remove whitespace from both ends of a string.
   - **padStart**: Pad the beginning of a string with another string until it reaches a desired length.
   - **padEnd**: Pad the end of a string with another string until it reaches a desired length.

@@ -134,3 +134,36 @@ let substr26 = str25.substring(str25.indexOf('W'), str25.indexOf('!'))
 console.log(substr25.substring(substr25.length -2, substr25.length))
 console.log(substr26.substring(0, substr26.length-3))
 
+
+// trim
+
+
+// 1) Task: Given a string " Hello, World! ", use trim to remove whitespace from both ends.
+let str26 = "   Hello, World!   ";
+console.log(str26.trim())
+
+// 2) Task: Given a string "\t\n Hello, World! \n\t", use trim to remove tabs, newlines, and spaces from both ends.
+let str27 = "\t\n   Hello, World!  \n\t";
+
+console.log(str27.trim())
+
+
+// padStart
+
+// 1) Task: Given a string "5", pad it with leading zeros to make it 3 characters long using padStart.
+
+let str28 = '5'
+console.log(str28.padStart(3))
+
+// 2) Task: Given a string "abc", pad it with "x" on the left to make it 5 characters long using padStart.
+let str29 = 'abc'
+console.log(str29.padStart(5, 'x'))
+
+// 3) Task: Given a string "JavaScript", pad it to a length of 15 without specifying padString.
+let str32 = "JavaScript";
+console.log(str32.padEnd(15))
+
+// 4) Task: Given a list of numbers ["5", "15", "150"], use padStart to format them all to a length of 4 with leading spaces.
+let numbers = ["5", "15", "150"];
+let numbers1 = numbers.map((item) => item.padStart(4))
+console.log(numbers1)
