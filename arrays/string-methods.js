@@ -167,3 +167,97 @@ console.log(str32.padEnd(15))
 let numbers = ["5", "15", "150"];
 let numbers1 = numbers.map((item) => item.padStart(4))
 console.log(numbers1)
+
+
+// padEnd
+
+// 1) Task: Given a string "5", pad it with trailing zeros to make it 3 characters long using padEnd.
+let str34 = '5'
+console.log(str34.padEnd(3, '0'))
+
+// 2) Task: Given a string "abc", pad it with spaces on the right to make it 6 characters long using padEnd.
+let str35 = 'abc'
+console.log(str35.padEnd(6))
+
+// 3) Task: Given a string "123", pad it with "x" on the right to make it 5 characters long using padEnd.
+let str36 = '123'
+console.log(str36.padEnd(5, 'x'))
+
+// 4) Task: Given a list of strings ["a", "abc", "abcd"], use padEnd to format them all to a length of 6 with trailing spaces.
+let strings = ["a", "abc", "abcd"];
+let resultArr = strings.map((item) => item.padEnd(6))
+console.log(resultArr)
+
+
+// repeat 
+
+// 1) Task: Given a string "ha", repeat it 4 times using repeat.
+let str37 = 'ha'
+console.log(str37.repeat(4))
+
+
+// split
+
+// 1) Task: Given a string "Hello World", split it into an array of words using split.
+let str38 = "Hello World";
+console.log(str38.split(" "))
+
+
+// 2) Task: Given a URL "https://example.com/page/about", split it into parts using split.
+console.log("https://example.com/page/about".split('/'))
+
+
+// replace
+
+// 1) Task: Given a string "Hello, There!", replace "There" with "JavaScript" using replace.
+let str39 = "Hello, There!";
+console.log(str39.replace('There', 'JavaScript'))
+
+// 2) Task: Replace "hello" with "Hi" in the string "Hello, hello!", considering case sensitivity.
+let str40 = "Hello, hello!";
+console.log(str40.replace('hello', 'Hi'))
+
+// 3) Task: Replace the first occurrence of "is" with "was" in the string "This is a test. This is only a test.".
+let str41 = "This is a test. This is only a test.";
+console.log(str41.replace('is', 'was'))
+
+// 4) Task: Replace "http" with "https" in the URL "http://example.com".
+let url = "http://example.com";
+console.log(url.replace('http', 'https'))
+
+
+// replaceAll
+
+// 1) Task: Replace all occurrences of "is" with "was" in the string "This is a test. This is only a test.".
+let str42 = "This is a test. This is only a test.";
+console.log(str42.replaceAll('is', 'was'))
+
+
+// 2) Task: Replace all occurrences of "car" with "bike" in the string "Car car CAR car" ignoring case sensitivity.
+let str43 = "Car car CAR car";
+console.log(str43.replaceAll(/car/gi, 'bike'))
+
+
+// toLowerCase
+
+
+// 1) Task: Convert the string "HELLO, WORLD!" to lowercase using toLowerCase.
+let str44 = "HELLO, WORLD!";
+console.log(str44.toLowerCase())
+
+// 2) Task: Convert the sentence "JavaScript Is Fun" to lowercase using toLowerCase.
+let str45 = "JavaScript Is Fun";
+console.log(str45.toLowerCase())
+
+
+// toUpperCase
+
+// 1) Task: Convert the string "Hello, World!" to uppercase using toUpperCase.
+let str46 = "Hello, World!";
+console.log(str46.toUpperCase())
+
+// 2) Task: Convert the sentence "JavaScript is fun" to uppercase using toUpperCase.
+let str47 = "JavaScript is fun";
+console.log(str47.toUpperCase())
+
+
