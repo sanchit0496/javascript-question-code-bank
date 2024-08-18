@@ -87,7 +87,6 @@ Here's the combined list of JavaScript interview preparation topics, including b
   - Filter out elements from an array that meet a specific condition.
 
 - **Reducing Arrays:**
-  - Reduce an array to a single value using `reduce`.
   - Calculate the sum of all elements in an array using `reduce`.
   - Count occurrences of elements in an array using `reduce`.
 
