@@ -68,7 +68,6 @@ Here's the combined list of JavaScript interview preparation topics, including b
 - **Searching for Elements:**
   - Find the index of a specific element in an array.
   - Check if an array contains a specific element.
-  - Find the first element that satisfies a given condition.
   - Find all elements that satisfy a given condition.
 
 - **Sorting and Reversing:**
