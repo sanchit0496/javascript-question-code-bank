@@ -111,7 +111,7 @@ Here's the combined list of JavaScript interview preparation topics, including b
   - Chain multiple array methods like `filter`, `map`, and `reduce`.
   - Use method chaining for complex operations in a single expression.
 
-- **Performance Considerations:**
+- **Performance Considerations (Theoretical):**
   - Compare performance of array methods like `push`, `pop`, `shift`, `unshift`, `splice`, and `concat`.
   - Understand the time complexity of various array operations (e.g., accessing, searching, sorting).
 
